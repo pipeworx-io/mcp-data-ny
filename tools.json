@@ -1,0 +1,89 @@
+[
+  {
+    "name": "datasets",
+    "description": "Search dataset catalogue.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  {
+    "name": "query",
+    "description": "SoQL query on a single resource.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "resource_id": {
+          "type": "string",
+          "description": "Socrata 4x4, e.g. \"xj2p-gjci\""
+        },
+        "where": {
+          "type": "string",
+          "description": "SoQL WHERE clause (without \"WHERE\")."
+        },
+        "select": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "order": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "resource_id"
+      ]
+    }
+  },
+  {
+    "name": "metadata",
+    "description": "Resource metadata.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "resource_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resource_id"
+      ]
+    }
+  },
+  {
+    "name": "column_data",
+    "description": "Distinct values in a column.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "resource_id": {
+          "type": "string"
+        },
+        "column": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resource_id",
+        "column"
+      ]
+    }
+  }
+]
